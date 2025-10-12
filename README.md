@@ -46,25 +46,14 @@ By incorporating InE during training, the quality of the fused images can be sig
 To use InE, you need the following pretrained models:
 
 **1. Encoder Pretrained Models**  
-- Infrared branch: `encoder_ir.pth`  
-- Visible branch: `encoder_vi.pth`  
-
-Place them in:  
-InE/InELoss/models/ir
-InE/InELoss/models/vi
+- Infrared branch: `encoder_ir.pth`  -InE/InELoss/models/ir
+- Visible branch: `encoder_vi.pth`   -InE/InELoss/models/vi
 
 **2. Semantic Segmentation Model**  
-- BiSeNet segmentation model: `model_final.pth`  
-
-Place it in:  
-Encoder_train/model
-
+- BiSeNet segmentation model: `model_final.pth`  -Encoder_train/model
 
 **3. Modality Transformation Model**  
-- VI-to-IR model: `VI2IR119.pth`  
-
-Place it in:  
-InE/SAM/model
+- VI-to-IR model: `VI2IR119.pth`  -InE/SAM/model
 
 ### Step 2: Integrate InE into Your Fusion Algorithm
 The InE loss is implemented in:  
