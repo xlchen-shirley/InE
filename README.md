@@ -20,9 +20,8 @@ Train
 1. train PMT
 "If you want to train the PMT model, please make sure the dataset is ready and run PMT/train.py"
 2.train InE
-(1) Prepare the required datasets.
-(2) Since two encoders are needed to extract features from infrared and visible images, prepare two datasets and train the encoders separately.
-(3) Download the pretrained model `model_final.pth` from [this link](https://www.123865.com/s/QmjfTd-JxWc?pwd=fEm0#) (extraction code: `fEm0`)
+(1) Since two encoders are needed to extract features from infrared and visible images, prepare two datasets and train the encoders separately.
+(2) Download the pretrained model `model_final.pth` from [this link](https://www.123865.com/s/QmjfTd-JxWc?pwd=fEm0#) (extraction code: `fEm0`)
  and place it in Encoder_train/model.
 
 Test
