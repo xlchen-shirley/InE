@@ -11,7 +11,7 @@ path_res_vi = r'./models/vi/encoder_vi.pth'
 path_seg = r'../../Enocder_train/model/model_final.pth'
 
 @torch.no_grad()
-def loss(vis_y_image, f_y_image, vi2ir, ir_image, ir2vi):
+def InELoss(vis_y_image, f_y_image, vi2ir, ir_image, ir2vi):
 
 
     diff_loss = 0
@@ -92,4 +92,4 @@ if __name__=='__main__':
     f_y = f_y.unsqueeze(0).cuda()
     ir2vi = ir2vi.unsqueeze(0).cuda()
 
-    a = loss(vis_y_image, f_y, vi2ir, ir, ir2vi)
+    a = InELoss(vis_y_image, f_y, vi2ir, ir, ir2vi)
