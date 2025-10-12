@@ -27,12 +27,82 @@ Train
 
 Test
 -
-1. test PMT
+test PMT
 If you want to test PMT or generate pseudo-images, please use PMT/test.py. We also provide a pretrained model. Download the pretrained model VI2IR119.pth from [this link](https://www.123865.com/s/QmjfTd-JxWc?pwd=fEm0#) (extraction code: fEm0)，and place it in the ./models/1 directory.
-2. test InE
 
 Use InE
 -
+1. What is InE?
+
+InE is an auxiliary fusion loss designed to improve the performance of image fusion. By incorporating InE during training, the quality of the fused images can be significantly enhanced.
+
+2. How to Use InE
+Step 1: Prepare Pretrained Models
+
+To use InE, you need the following four pretrained models:
+
+Encoder Pretrained Models
+
+Infrared branch: encoder_ir.pth
+
+Visible branch: encoder_vi.pth
+Place them in:
+
+InE/InELoss/models/ir
+InE/InELoss/models/vi
+
+
+Semantic Segmentation Model
+
+BiSeNet segmentation model: model_final.pth
+Place it in:
+
+Encoder_train/model
+
+
+Modality Transformation Model
+
+VI-to-IR model: VI2IR119.pth
+Place it in:
+
+InE/SAM/model
+
+Step 2: Integrate InE into Your Fusion Algorithm
+
+The InE loss is implemented in:
+
+InE/InELoss/loss.py
+
+
+Example:
+Suppose your original fusion loss is:
+
+L = SSIM(vi, f) + SSIM(ir, f)
+
+
+To use InE:
+
+Generate pseudo-infrared and pseudo-visible images using transnet from PMT_test:
+
+vi2ir, ir2vi = transnet(vi, ir)
+
+
+Add the InE loss:
+
+L = SSIM(vi, f) + SSIM(ir, f) + α * InELoss(vi, f, vi2ir, ir, ir2vi)
+
+
+Note: Since InELoss is an auxiliary loss, set α such that the original loss remains dominant, typically α = 1/5 to 1/15 of the original loss.
+
+3. Results
+
+We provide models trained with InE for the following fusion methods: CDDFuse, SHIP, and SwinFusion.
+
+Download all models here:  [this link](https://www.123865.com/s/QmjfTd-JxWc?pwd=fEm0#)
+ (extraction code: fEm0)
+
+Important: When testing CDDFuse, remove nn.DataParallel to avoid model mismatch errors.
+
 
 Citation
 -
