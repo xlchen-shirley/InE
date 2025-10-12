@@ -58,7 +58,7 @@ To use InE, you need the following pretrained models:
 ### Step 2: Integrate InE into Your Fusion Algorithm
 The InE loss is implemented in:  
 
-InE/InELoss/loss.py
+> 💡 Quick tip: From the root directory of this repository, navigate to `InE/InELoss/` to find `loss.py`.
 
 **Example:**
 
@@ -78,9 +78,7 @@ Note:Since InELoss is an auxiliary fusion loss, when setting α, ensure that α 
 
 We provide models trained with InE for the following fusion methods: CDDFuse, SHIP, and SwinFusion.
 
-Download all models here:  [this link](https://www.123865.com/s/QmjfTd-JxWc?pwd=fEm0#)
-
-(extraction code: fEm0)
+Download all models here:  [this link](https://www.123865.com/s/QmjfTd-JxWc?pwd=fEm0#)(extraction code: fEm0)
 
 **Important:**
 When testing CDDFuse, remove nn.DataParallel to avoid model mismatch errors.
