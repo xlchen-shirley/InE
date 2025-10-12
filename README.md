@@ -84,9 +84,7 @@ vi2ir, ir2vi = transnet(vi, ir)
 L = SSIM(vi, f) + SSIM(ir, f) + α * InELoss(vi, f, vi2ir, ir, ir2vi)
 
 Note:Since InELoss is an auxiliary fusion loss, when setting α, ensure that α * InELoss is 1/5 to 1/15 of the original loss
-
-Citation
--
+```
 📊 Results
 
 We provide models trained with InE for the following fusion methods: CDDFuse, SHIP, and SwinFusion.
@@ -98,4 +96,5 @@ Download all models here:  [this link](https://www.123865.com/s/QmjfTd-JxWc?pwd=
 **Important:**
 When testing CDDFuse, remove nn.DataParallel to avoid model mismatch errors.
 
-Contacts
+Citation
+-
