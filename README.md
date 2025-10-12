@@ -32,11 +32,11 @@ If you want to test PMT or generate pseudo-images, please use PMT/test.py. We al
 
 Use InE
 -
-1. What is InE?
+# 1. What is InE?  
 
 InE is an auxiliary fusion loss designed to improve the performance of image fusion. By incorporating InE during training, the quality of the fused images can be significantly enhanced.
 
-2. How to Use InE
+# 2. How to Use InE
 Step 1: Prepare Pretrained Models
 
 To use InE, you need the following four pretrained models:
@@ -74,7 +74,7 @@ The InE loss is implemented in:
 InE/InELoss/loss.py
 
 
-Example:
+## **Example:**
 Suppose your original fusion loss is:
 
 L = SSIM(vi, f) + SSIM(ir, f)
@@ -94,7 +94,7 @@ L = SSIM(vi, f) + SSIM(ir, f) + α * InELoss(vi, f, vi2ir, ir, ir2vi)
 
 Note: Since InELoss is an auxiliary loss, set α such that the original loss remains dominant, typically α = 1/5 to 1/15 of the original loss.
 
-3. Results
+# 3. Results
 
 We provide models trained with InE for the following fusion methods: CDDFuse, SHIP, and SwinFusion.
 
