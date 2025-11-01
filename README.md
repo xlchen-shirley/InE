@@ -84,14 +84,15 @@ When testing CDDFuse, remove nn.DataParallel to avoid model mismatch errors.
 
 Citation
 -
+```bibtex
 @ARTICLE{11175473,
   author={Chen, Xueling and Chen, Hanlin and Gao, Qixiang and Zhang, Wuxia and Ding, Chen and Sun, Wei and Zhang, Yanning},
-  journal={IEEE Transactions on Geoscience and Remote Sensing}, 
-  title={Instance-Aware Encoder for Complementary Information Maximization in Self-Supervised Infrared and Visible Image Fusion}, 
+  journal={IEEE Transactions on Geoscience and Remote Sensing},
+  title={Instance-Aware Encoder for Complementary Information Maximization in Self-Supervised Infrared and Visible Image Fusion},
   year={2025},
   volume={63},
   number={},
   pages={1-19},
-  keywords={Feature extraction;Image fusion;Semantics;Data mining;Computer science;Training;Telecommunications;Remote sensing;Meteorology;Measurement;Complementary information;image fusion;instance aware;semantics;unsupervised learning},
-  doi={10.1109/TGRS.2025.3613126}}
+  doi={10.1109/TGRS.2025.3613126}
+}
 
